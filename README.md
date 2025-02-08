@@ -1,2 +1,2 @@
 # wordpress
-deploy wordpress on aws cloud
+deploy wordpress website on aws cloud
