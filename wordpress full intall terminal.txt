@@ -1,0 +1,785 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Lenovo> cd downloads
+PS C:\Users\Lenovo\downloads> ssh -i "vedantkey.pem" ec2-user@ec2-13-127-171-69.ap-south-1.compute.amazonaws.com
+The authenticity of host 'ec2-13-127-171-69.ap-south-1.compute.amazonaws.com (64:ff9b::d7f:ab45)' can't be established.
+ED25519 key fingerprint is SHA256:4JeH8x8Zd1xVSGux4xJkPgAGdAppgGOzq3H312c/oPU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-13-127-171-69.ap-south-1.compute.amazonaws.com' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-10-32 ~]$ sudo dnf update -y
+Last metadata expiration check: 0:19:28 ago on Wed Jan 29 04:06:54 2025.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[ec2-user@ip-172-31-10-32 ~]$ sudo dnf install -y httpd wget php-fpm php-mysqli php-json php php-devel
+Last metadata expiration check: 0:19:54 ago on Wed Jan 29 04:06:54 2025.
+Package wget-1.21.3-1.amzn2023.0.4.x86_64 is already installed.
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                 Architecture               Version                                           Repository                       Size
+============================================================================================================================================================
+Installing:
+ httpd                                   x86_64                     2.4.62-1.amzn2023                                 amazonlinux                      48 k
+ php8.3                                  x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                      10 k
+ php8.3-devel                            x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                     718 k
+ php8.3-fpm                              x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                     1.9 M
+ php8.3-mysqlnd                          x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                     147 k
+Installing dependencies:
+ annobin-docs                            noarch                     10.93-1.amzn2023.0.1                              amazonlinux                      92 k
+ annobin-plugin-gcc                      x86_64                     10.93-1.amzn2023.0.1                              amazonlinux                     887 k
+ apr                                     x86_64                     1.7.5-1.amzn2023.0.2                              amazonlinux                     130 k
+ apr-util                                x86_64                     1.6.3-1.amzn2023.0.1                              amazonlinux                      98 k
+ autoconf                                noarch                     2.69-36.amzn2023.0.3                              amazonlinux                     666 k
+ automake                                noarch                     1.16.5-9.amzn2023.0.3                             amazonlinux                     677 k
+ cmake-filesystem                        x86_64                     3.22.2-1.amzn2023.0.4                             amazonlinux                      16 k
+ cpp                                     x86_64                     11.4.1-2.amzn2023.0.2                             amazonlinux                      10 M
+ emacs-filesystem                        noarch                     1:28.2-3.amzn2023.0.8                             amazonlinux                      10 k
+ gc                                      x86_64                     8.0.4-5.amzn2023.0.2                              amazonlinux                     105 k
+ gcc                                     x86_64                     11.4.1-2.amzn2023.0.2                             amazonlinux                      32 M
+ gcc-c++                                 x86_64                     11.4.1-2.amzn2023.0.2                             amazonlinux                      12 M
+ generic-logos-httpd                     noarch                     18.0.0-12.amzn2023.0.3                            amazonlinux                      19 k
+ glibc-devel                             x86_64                     2.34-117.amzn2023.0.1                             amazonlinux                      33 k
+ glibc-headers-x86                       noarch                     2.34-117.amzn2023.0.1                             amazonlinux                     434 k
+ guile22                                 x86_64                     2.2.7-2.amzn2023.0.3                              amazonlinux                     6.4 M
+ httpd-core                              x86_64                     2.4.62-1.amzn2023                                 amazonlinux                     1.4 M
+ httpd-filesystem                        noarch                     2.4.62-1.amzn2023                                 amazonlinux                      14 k
+ httpd-tools                             x86_64                     2.4.62-1.amzn2023                                 amazonlinux                      81 k
+ kernel-headers                          x86_64                     6.1.124-134.200.amzn2023                          amazonlinux                     1.4 M
+ keyutils-libs-devel                     x86_64                     1.6.3-1.amzn2023.0.1                              amazonlinux                      55 k
+ krb5-devel                              x86_64                     1.21.3-1.amzn2023.0.1                             amazonlinux                     136 k
+ libbrotli                               x86_64                     1.0.9-4.amzn2023.0.2                              amazonlinux                     315 k
+ libcom_err-devel                        x86_64                     1.46.5-2.amzn2023.0.2                             amazonlinux                      17 k
+ libkadm5                                x86_64                     1.21.3-1.amzn2023.0.1                             amazonlinux                      80 k
+ libmpc                                  x86_64                     1.2.1-2.amzn2023.0.2                              amazonlinux                      62 k
+ libselinux-devel                        x86_64                     3.4-5.amzn2023.0.2                                amazonlinux                     115 k
+ libsepol-devel                          x86_64                     3.4-3.amzn2023.0.3                                amazonlinux                      42 k
+ libsodium                               x86_64                     1.0.19-4.amzn2023                                 amazonlinux                     176 k
+ libstdc++-devel                         x86_64                     11.4.1-2.amzn2023.0.2                             amazonlinux                     2.2 M
+ libtool                                 x86_64                     2.4.7-1.amzn2023.0.3                              amazonlinux                     596 k
+ libtool-ltdl                            x86_64                     2.4.7-1.amzn2023.0.3                              amazonlinux                      38 k
+ libverto-devel                          x86_64                     0.3.2-1.amzn2023.0.2                              amazonlinux                      15 k
+ libxcrypt-devel                         x86_64                     4.4.33-7.amzn2023                                 amazonlinux                      32 k
+ libxml2-devel                           x86_64                     2.10.4-1.amzn2023.0.7                             amazonlinux                     499 k
+ libxslt                                 x86_64                     1.1.34-5.amzn2023.0.2                             amazonlinux                     241 k
+ m4                                      x86_64                     1.4.19-2.amzn2023.0.2                             amazonlinux                     296 k
+ mailcap                                 noarch                     2.1.49-3.amzn2023.0.3                             amazonlinux                      33 k
+ make                                    x86_64                     1:4.3-5.amzn2023.0.2                              amazonlinux                     534 k
+ nginx-filesystem                        noarch                     1:1.26.2-1.amzn2023.0.1                           amazonlinux                     9.9 k
+ openssl-devel                           x86_64                     1:3.0.8-1.amzn2023.0.18                           amazonlinux                     3.0 M
+ pcre2-devel                             x86_64                     10.40-1.amzn2023.0.3                              amazonlinux                     473 k
+ pcre2-utf16                             x86_64                     10.40-1.amzn2023.0.3                              amazonlinux                     216 k
+ pcre2-utf32                             x86_64                     10.40-1.amzn2023.0.3                              amazonlinux                     205 k
+ perl-B                                  x86_64                     1.80-477.amzn2023.0.6                             amazonlinux                     179 k
+ perl-Data-Dumper                        x86_64                     2.174-460.amzn2023.0.2                            amazonlinux                      55 k
+ perl-File-Compare                       noarch                     1.100.600-477.amzn2023.0.6                        amazonlinux                      14 k
+ perl-File-Copy                          noarch                     2.34-477.amzn2023.0.6                             amazonlinux                      20 k
+ perl-File-Find                          noarch                     1.37-477.amzn2023.0.6                             amazonlinux                      26 k
+ perl-Thread-Queue                       noarch                     3.14-458.amzn2023.0.2                             amazonlinux                      22 k
+ perl-threads                            x86_64                     1:2.25-458.amzn2023.0.3                           amazonlinux                      58 k
+ perl-threads-shared                     x86_64                     1.61-458.amzn2023.0.2                             amazonlinux                      44 k
+ php8.3-cli                              x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                     3.7 M
+ php8.3-common                           x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                     737 k
+ php8.3-pdo                              x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                      89 k
+ php8.3-process                          x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                      45 k
+ php8.3-xml                              x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                     154 k
+ xz-devel                                x86_64                     5.2.5-9.amzn2023.0.2                              amazonlinux                      53 k
+ zlib-devel                              x86_64                     1.2.11-33.amzn2023.0.5                            amazonlinux                      45 k
+Installing weak dependencies:
+ apr-util-openssl                        x86_64                     1.6.3-1.amzn2023.0.1                              amazonlinux                      17 k
+ mod_http2                               x86_64                     2.0.27-1.amzn2023.0.3                             amazonlinux                     166 k
+ mod_lua                                 x86_64                     2.4.62-1.amzn2023                                 amazonlinux                      61 k
+ php8.3-mbstring                         x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                     528 k
+ php8.3-opcache                          x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                     379 k
+ php8.3-sodium                           x86_64                     8.3.10-1.amzn2023.0.1                             amazonlinux                      41 k
+
+Transaction Summary
+============================================================================================================================================================
+Install  70 Packages
+
+Total download size: 85 M
+Installed size: 283 M
+Downloading Packages:
+(1/70): annobin-plugin-gcc-10.93-1.amzn2023.0.1.x86_64.rpm                                                                   16 MB/s | 887 kB     00:00
+(2/70): annobin-docs-10.93-1.amzn2023.0.1.noarch.rpm                                                                        1.5 MB/s |  92 kB     00:00
+(3/70): apr-1.7.5-1.amzn2023.0.2.x86_64.rpm                                                                                 1.9 MB/s | 130 kB     00:00
+(4/70): apr-util-1.6.3-1.amzn2023.0.1.x86_64.rpm                                                                            5.8 MB/s |  98 kB     00:00
+(5/70): apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64.rpm                                                                    912 kB/s |  17 kB     00:00
+(6/70): autoconf-2.69-36.amzn2023.0.3.noarch.rpm                                                                             21 MB/s | 666 kB     00:00
+(7/70): cmake-filesystem-3.22.2-1.amzn2023.0.4.x86_64.rpm                                                                   736 kB/s |  16 kB     00:00
+(8/70): automake-1.16.5-9.amzn2023.0.3.noarch.rpm                                                                            17 MB/s | 677 kB     00:00
+(9/70): emacs-filesystem-28.2-3.amzn2023.0.8.noarch.rpm                                                                     526 kB/s |  10 kB     00:00
+(10/70): gc-8.0.4-5.amzn2023.0.2.x86_64.rpm                                                                                 3.0 MB/s | 105 kB     00:00
+(11/70): cpp-11.4.1-2.amzn2023.0.2.x86_64.rpm                                                                                17 MB/s |  10 MB     00:00
+(12/70): generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch.rpm                                                              1.0 MB/s |  19 kB     00:00
+(13/70): glibc-devel-2.34-117.amzn2023.0.1.x86_64.rpm                                                                       1.6 MB/s |  33 kB     00:00
+(14/70): glibc-headers-x86-2.34-117.amzn2023.0.1.noarch.rpm                                                                 3.4 MB/s | 434 kB     00:00
+(15/70): gcc-c++-11.4.1-2.amzn2023.0.2.x86_64.rpm                                                                            15 MB/s |  12 MB     00:00
+(16/70): httpd-2.4.62-1.amzn2023.x86_64.rpm                                                                                 1.4 MB/s |  48 kB     00:00
+(17/70): httpd-core-2.4.62-1.amzn2023.x86_64.rpm                                                                            6.4 MB/s | 1.4 MB     00:00
+(18/70): httpd-filesystem-2.4.62-1.amzn2023.noarch.rpm                                                                      699 kB/s |  14 kB     00:00
+(19/70): httpd-tools-2.4.62-1.amzn2023.x86_64.rpm                                                                           1.6 MB/s |  81 kB     00:00
+(20/70): guile22-2.2.7-2.amzn2023.0.3.x86_64.rpm                                                                             11 MB/s | 6.4 MB     00:00
+(21/70): kernel-headers-6.1.124-134.200.amzn2023.x86_64.rpm                                                                 8.1 MB/s | 1.4 MB     00:00
+(22/70): keyutils-libs-devel-1.6.3-1.amzn2023.0.1.x86_64.rpm                                                                1.0 MB/s |  55 kB     00:00
+(23/70): krb5-devel-1.21.3-1.amzn2023.0.1.x86_64.rpm                                                                        1.5 MB/s | 136 kB     00:00
+(24/70): libbrotli-1.0.9-4.amzn2023.0.2.x86_64.rpm                                                                          6.2 MB/s | 315 kB     00:00
+(25/70): libcom_err-devel-1.46.5-2.amzn2023.0.2.x86_64.rpm                                                                  345 kB/s |  17 kB     00:00
+(26/70): libkadm5-1.21.3-1.amzn2023.0.1.x86_64.rpm                                                                          1.1 MB/s |  80 kB     00:00
+(27/70): libmpc-1.2.1-2.amzn2023.0.2.x86_64.rpm                                                                             2.4 MB/s |  62 kB     00:00
+(28/70): gcc-11.4.1-2.amzn2023.0.2.x86_64.rpm                                                                                20 MB/s |  32 MB     00:01
+(29/70): libselinux-devel-3.4-5.amzn2023.0.2.x86_64.rpm                                                                     888 kB/s | 115 kB     00:00
+(30/70): libsepol-devel-3.4-3.amzn2023.0.3.x86_64.rpm                                                                       338 kB/s |  42 kB     00:00
+(31/70): libtool-2.4.7-1.amzn2023.0.3.x86_64.rpm                                                                            5.9 MB/s | 596 kB     00:00
+(32/70): libsodium-1.0.19-4.amzn2023.x86_64.rpm                                                                             1.6 MB/s | 176 kB     00:00
+(33/70): libstdc++-devel-11.4.1-2.amzn2023.0.2.x86_64.rpm                                                                    20 MB/s | 2.2 MB     00:00
+(34/70): libtool-ltdl-2.4.7-1.amzn2023.0.3.x86_64.rpm                                                                       2.1 MB/s |  38 kB     00:00
+(35/70): libxcrypt-devel-4.4.33-7.amzn2023.x86_64.rpm                                                                       1.8 MB/s |  32 kB     00:00
+(36/70): libverto-devel-0.3.2-1.amzn2023.0.2.x86_64.rpm                                                                     595 kB/s |  15 kB     00:00
+(37/70): libxml2-devel-2.10.4-1.amzn2023.0.7.x86_64.rpm                                                                      15 MB/s | 499 kB     00:00
+(38/70): mailcap-2.1.49-3.amzn2023.0.3.noarch.rpm                                                                           2.1 MB/s |  33 kB     00:00
+(39/70): m4-1.4.19-2.amzn2023.0.2.x86_64.rpm                                                                                5.0 MB/s | 296 kB     00:00
+(40/70): libxslt-1.1.34-5.amzn2023.0.2.x86_64.rpm                                                                           3.4 MB/s | 241 kB     00:00
+(41/70): mod_lua-2.4.62-1.amzn2023.x86_64.rpm                                                                               4.1 MB/s |  61 kB     00:00
+(42/70): mod_http2-2.0.27-1.amzn2023.0.3.x86_64.rpm                                                                         7.3 MB/s | 166 kB     00:00
+(43/70): nginx-filesystem-1.26.2-1.amzn2023.0.1.noarch.rpm                                                                  397 kB/s | 9.9 kB     00:00
+(44/70): make-4.3-5.amzn2023.0.2.x86_64.rpm                                                                                 5.2 MB/s | 534 kB     00:00
+(45/70): pcre2-devel-10.40-1.amzn2023.0.3.x86_64.rpm                                                                        4.1 MB/s | 473 kB     00:00
+(46/70): pcre2-utf16-10.40-1.amzn2023.0.3.x86_64.rpm                                                                        2.3 MB/s | 216 kB     00:00
+(47/70): perl-B-1.80-477.amzn2023.0.6.x86_64.rpm                                                                            5.1 MB/s | 179 kB     00:00
+(48/70): openssl-devel-3.0.8-1.amzn2023.0.18.x86_64.rpm                                                                      16 MB/s | 3.0 MB     00:00
+(49/70): pcre2-utf32-10.40-1.amzn2023.0.3.x86_64.rpm                                                                        3.7 MB/s | 205 kB     00:00
+(50/70): perl-Data-Dumper-2.174-460.amzn2023.0.2.x86_64.rpm                                                                 2.7 MB/s |  55 kB     00:00
+(51/70): perl-File-Compare-1.100.600-477.amzn2023.0.6.noarch.rpm                                                            805 kB/s |  14 kB     00:00
+(52/70): perl-File-Copy-2.34-477.amzn2023.0.6.noarch.rpm                                                                    1.1 MB/s |  20 kB     00:00
+(53/70): perl-File-Find-1.37-477.amzn2023.0.6.noarch.rpm                                                                    1.2 MB/s |  26 kB     00:00
+(54/70): perl-Thread-Queue-3.14-458.amzn2023.0.2.noarch.rpm                                                                 1.4 MB/s |  22 kB     00:00
+(55/70): perl-threads-shared-1.61-458.amzn2023.0.2.x86_64.rpm                                                               2.2 MB/s |  44 kB     00:00
+(56/70): perl-threads-2.25-458.amzn2023.0.3.x86_64.rpm                                                                      2.0 MB/s |  58 kB     00:00
+(57/70): php8.3-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                            363 kB/s |  10 kB     00:00
+(58/70): php8.3-common-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                      11 MB/s | 737 kB     00:00
+(59/70): php8.3-devel-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                      5.3 MB/s | 718 kB     00:00
+(60/70): php8.3-cli-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                         19 MB/s | 3.7 MB     00:00
+(61/70): php8.3-fpm-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                         14 MB/s | 1.9 MB     00:00
+(62/70): php8.3-mbstring-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                   6.3 MB/s | 528 kB     00:00
+(63/70): php8.3-opcache-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                    3.7 MB/s | 379 kB     00:00
+(64/70): php8.3-mysqlnd-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                    1.4 MB/s | 147 kB     00:00
+(65/70): php8.3-pdo-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                        1.1 MB/s |  89 kB     00:00
+(66/70): php8.3-process-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                    1.4 MB/s |  45 kB     00:00
+(67/70): xz-devel-5.2.5-9.amzn2023.0.2.x86_64.rpm                                                                           2.8 MB/s |  53 kB     00:00
+(68/70): php8.3-sodium-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                     681 kB/s |  41 kB     00:00
+(69/70): zlib-devel-1.2.11-33.amzn2023.0.5.x86_64.rpm                                                                       2.2 MB/s |  45 kB     00:00
+(70/70): php8.3-xml-8.3.10-1.amzn2023.0.1.x86_64.rpm                                                                        1.9 MB/s | 154 kB     00:00
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                        32 MB/s |  85 MB     00:02
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Installing       : php8.3-common-8.3.10-1.amzn2023.0.1.x86_64                                                                                        1/70
+  Installing       : libmpc-1.2.1-2.amzn2023.0.2.x86_64                                                                                                2/70
+  Installing       : apr-1.7.5-1.amzn2023.0.2.x86_64                                                                                                   3/70
+  Installing       : apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64                                                                                      4/70
+  Installing       : apr-util-1.6.3-1.amzn2023.0.1.x86_64                                                                                              5/70
+  Installing       : php8.3-cli-8.3.10-1.amzn2023.0.1.x86_64                                                                                           6/70
+  Installing       : php8.3-pdo-8.3.10-1.amzn2023.0.1.x86_64                                                                                           7/70
+  Installing       : zlib-devel-1.2.11-33.amzn2023.0.5.x86_64                                                                                          8/70
+  Installing       : perl-threads-1:2.25-458.amzn2023.0.3.x86_64                                                                                       9/70
+  Installing       : mailcap-2.1.49-3.amzn2023.0.3.noarch                                                                                             10/70
+  Running scriptlet: httpd-filesystem-2.4.62-1.amzn2023.noarch                                                                                        11/70
+  Installing       : httpd-filesystem-2.4.62-1.amzn2023.noarch                                                                                        11/70
+  Installing       : perl-threads-shared-1.61-458.amzn2023.0.2.x86_64                                                                                 12/70
+  Installing       : perl-Thread-Queue-3.14-458.amzn2023.0.2.noarch                                                                                   13/70
+  Installing       : httpd-tools-2.4.62-1.amzn2023.x86_64                                                                                             14/70
+  Installing       : httpd-core-2.4.62-1.amzn2023.x86_64                                                                                              15/70
+  Installing       : mod_http2-2.0.27-1.amzn2023.0.3.x86_64                                                                                           16/70
+  Installing       : mod_lua-2.4.62-1.amzn2023.x86_64                                                                                                 17/70
+  Installing       : cpp-11.4.1-2.amzn2023.0.2.x86_64                                                                                                 18/70
+  Installing       : php8.3-mbstring-8.3.10-1.amzn2023.0.1.x86_64                                                                                     19/70
+  Installing       : php8.3-opcache-8.3.10-1.amzn2023.0.1.x86_64                                                                                      20/70
+  Installing       : php8.3-process-8.3.10-1.amzn2023.0.1.x86_64                                                                                      21/70
+  Installing       : perl-Data-Dumper-2.174-460.amzn2023.0.2.x86_64                                                                                   22/70
+  Installing       : perl-B-1.80-477.amzn2023.0.6.x86_64                                                                                              23/70
+  Installing       : xz-devel-5.2.5-9.amzn2023.0.2.x86_64                                                                                             24/70
+  Installing       : perl-File-Find-1.37-477.amzn2023.0.6.noarch                                                                                      25/70
+  Installing       : perl-File-Copy-2.34-477.amzn2023.0.6.noarch                                                                                      26/70
+  Installing       : perl-File-Compare-1.100.600-477.amzn2023.0.6.noarch                                                                              27/70
+  Installing       : pcre2-utf32-10.40-1.amzn2023.0.3.x86_64                                                                                          28/70
+  Installing       : pcre2-utf16-10.40-1.amzn2023.0.3.x86_64                                                                                          29/70
+  Installing       : pcre2-devel-10.40-1.amzn2023.0.3.x86_64                                                                                          30/70
+  Installing       : openssl-devel-1:3.0.8-1.amzn2023.0.18.x86_64                                                                                     31/70
+  Running scriptlet: nginx-filesystem-1:1.26.2-1.amzn2023.0.1.noarch                                                                                  32/70
+  Installing       : nginx-filesystem-1:1.26.2-1.amzn2023.0.1.noarch                                                                                  32/70
+  Installing       : php8.3-fpm-8.3.10-1.amzn2023.0.1.x86_64                                                                                          33/70
+  Running scriptlet: php8.3-fpm-8.3.10-1.amzn2023.0.1.x86_64                                                                                          33/70
+  Installing       : m4-1.4.19-2.amzn2023.0.2.x86_64                                                                                                  34/70
+  Installing       : libxslt-1.1.34-5.amzn2023.0.2.x86_64                                                                                             35/70
+  Installing       : php8.3-xml-8.3.10-1.amzn2023.0.1.x86_64                                                                                          36/70
+  Installing       : libverto-devel-0.3.2-1.amzn2023.0.2.x86_64                                                                                       37/70
+  Installing       : libtool-ltdl-2.4.7-1.amzn2023.0.3.x86_64                                                                                         38/70
+  Installing       : libstdc++-devel-11.4.1-2.amzn2023.0.2.x86_64                                                                                     39/70
+  Installing       : libsodium-1.0.19-4.amzn2023.x86_64                                                                                               40/70
+  Installing       : php8.3-sodium-8.3.10-1.amzn2023.0.1.x86_64                                                                                       41/70
+  Installing       : libsepol-devel-3.4-3.amzn2023.0.3.x86_64                                                                                         42/70
+  Installing       : libselinux-devel-3.4-5.amzn2023.0.2.x86_64                                                                                       43/70
+  Installing       : libkadm5-1.21.3-1.amzn2023.0.1.x86_64                                                                                            44/70
+  Installing       : libcom_err-devel-1.46.5-2.amzn2023.0.2.x86_64                                                                                    45/70
+  Installing       : libbrotli-1.0.9-4.amzn2023.0.2.x86_64                                                                                            46/70
+  Installing       : keyutils-libs-devel-1.6.3-1.amzn2023.0.1.x86_64                                                                                  47/70
+  Installing       : krb5-devel-1.21.3-1.amzn2023.0.1.x86_64                                                                                          48/70
+  Installing       : kernel-headers-6.1.124-134.200.amzn2023.x86_64                                                                                   49/70
+  Installing       : glibc-headers-x86-2.34-117.amzn2023.0.1.noarch                                                                                   50/70
+  Installing       : libxcrypt-devel-4.4.33-7.amzn2023.x86_64                                                                                         51/70
+  Installing       : glibc-devel-2.34-117.amzn2023.0.1.x86_64                                                                                         52/70
+  Installing       : generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch                                                                                53/70
+  Installing       : httpd-2.4.62-1.amzn2023.x86_64                                                                                                   54/70
+  Running scriptlet: httpd-2.4.62-1.amzn2023.x86_64                                                                                                   54/70
+  Installing       : gc-8.0.4-5.amzn2023.0.2.x86_64                                                                                                   55/70
+  Installing       : guile22-2.2.7-2.amzn2023.0.3.x86_64                                                                                              56/70
+  Installing       : make-1:4.3-5.amzn2023.0.2.x86_64                                                                                                 57/70
+  Installing       : gcc-11.4.1-2.amzn2023.0.2.x86_64                                                                                                 58/70
+  Running scriptlet: gcc-11.4.1-2.amzn2023.0.2.x86_64                                                                                                 58/70
+  Installing       : gcc-c++-11.4.1-2.amzn2023.0.2.x86_64                                                                                             59/70
+  Installing       : emacs-filesystem-1:28.2-3.amzn2023.0.8.noarch                                                                                    60/70
+  Installing       : autoconf-2.69-36.amzn2023.0.3.noarch                                                                                             61/70
+  Installing       : automake-1.16.5-9.amzn2023.0.3.noarch                                                                                            62/70
+  Installing       : libtool-2.4.7-1.amzn2023.0.3.x86_64                                                                                              63/70
+  Installing       : cmake-filesystem-3.22.2-1.amzn2023.0.4.x86_64                                                                                    64/70
+  Installing       : libxml2-devel-2.10.4-1.amzn2023.0.7.x86_64                                                                                       65/70
+  Installing       : annobin-docs-10.93-1.amzn2023.0.1.noarch                                                                                         66/70
+  Installing       : annobin-plugin-gcc-10.93-1.amzn2023.0.1.x86_64                                                                                   67/70
+  Running scriptlet: annobin-plugin-gcc-10.93-1.amzn2023.0.1.x86_64                                                                                   67/70
+  Installing       : php8.3-devel-8.3.10-1.amzn2023.0.1.x86_64                                                                                        68/70
+  Installing       : php8.3-8.3.10-1.amzn2023.0.1.x86_64                                                                                              69/70
+  Installing       : php8.3-mysqlnd-8.3.10-1.amzn2023.0.1.x86_64                                                                                      70/70
+  Running scriptlet: httpd-2.4.62-1.amzn2023.x86_64                                                                                                   70/70
+  Running scriptlet: php8.3-mysqlnd-8.3.10-1.amzn2023.0.1.x86_64                                                                                      70/70
+  Verifying        : annobin-docs-10.93-1.amzn2023.0.1.noarch                                                                                          1/70
+  Verifying        : annobin-plugin-gcc-10.93-1.amzn2023.0.1.x86_64                                                                                    2/70
+  Verifying        : apr-1.7.5-1.amzn2023.0.2.x86_64                                                                                                   3/70
+  Verifying        : apr-util-1.6.3-1.amzn2023.0.1.x86_64                                                                                              4/70
+  Verifying        : apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64                                                                                      5/70
+  Verifying        : autoconf-2.69-36.amzn2023.0.3.noarch                                                                                              6/70
+  Verifying        : automake-1.16.5-9.amzn2023.0.3.noarch                                                                                             7/70
+  Verifying        : cmake-filesystem-3.22.2-1.amzn2023.0.4.x86_64                                                                                     8/70
+  Verifying        : cpp-11.4.1-2.amzn2023.0.2.x86_64                                                                                                  9/70
+  Verifying        : emacs-filesystem-1:28.2-3.amzn2023.0.8.noarch                                                                                    10/70
+  Verifying        : gc-8.0.4-5.amzn2023.0.2.x86_64                                                                                                   11/70
+  Verifying        : gcc-11.4.1-2.amzn2023.0.2.x86_64                                                                                                 12/70
+  Verifying        : gcc-c++-11.4.1-2.amzn2023.0.2.x86_64                                                                                             13/70
+  Verifying        : generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch                                                                                14/70
+  Verifying        : glibc-devel-2.34-117.amzn2023.0.1.x86_64                                                                                         15/70
+  Verifying        : glibc-headers-x86-2.34-117.amzn2023.0.1.noarch                                                                                   16/70
+  Verifying        : guile22-2.2.7-2.amzn2023.0.3.x86_64                                                                                              17/70
+  Verifying        : httpd-2.4.62-1.amzn2023.x86_64                                                                                                   18/70
+  Verifying        : httpd-core-2.4.62-1.amzn2023.x86_64                                                                                              19/70
+  Verifying        : httpd-filesystem-2.4.62-1.amzn2023.noarch                                                                                        20/70
+  Verifying        : httpd-tools-2.4.62-1.amzn2023.x86_64                                                                                             21/70
+  Verifying        : kernel-headers-6.1.124-134.200.amzn2023.x86_64                                                                                   22/70
+  Verifying        : keyutils-libs-devel-1.6.3-1.amzn2023.0.1.x86_64                                                                                  23/70
+  Verifying        : krb5-devel-1.21.3-1.amzn2023.0.1.x86_64                                                                                          24/70
+  Verifying        : libbrotli-1.0.9-4.amzn2023.0.2.x86_64                                                                                            25/70
+  Verifying        : libcom_err-devel-1.46.5-2.amzn2023.0.2.x86_64                                                                                    26/70
+  Verifying        : libkadm5-1.21.3-1.amzn2023.0.1.x86_64                                                                                            27/70
+  Verifying        : libmpc-1.2.1-2.amzn2023.0.2.x86_64                                                                                               28/70
+  Verifying        : libselinux-devel-3.4-5.amzn2023.0.2.x86_64                                                                                       29/70
+  Verifying        : libsepol-devel-3.4-3.amzn2023.0.3.x86_64                                                                                         30/70
+  Verifying        : libsodium-1.0.19-4.amzn2023.x86_64                                                                                               31/70
+  Verifying        : libstdc++-devel-11.4.1-2.amzn2023.0.2.x86_64                                                                                     32/70
+  Verifying        : libtool-2.4.7-1.amzn2023.0.3.x86_64                                                                                              33/70
+  Verifying        : libtool-ltdl-2.4.7-1.amzn2023.0.3.x86_64                                                                                         34/70
+  Verifying        : libverto-devel-0.3.2-1.amzn2023.0.2.x86_64                                                                                       35/70
+  Verifying        : libxcrypt-devel-4.4.33-7.amzn2023.x86_64                                                                                         36/70
+  Verifying        : libxml2-devel-2.10.4-1.amzn2023.0.7.x86_64                                                                                       37/70
+  Verifying        : libxslt-1.1.34-5.amzn2023.0.2.x86_64                                                                                             38/70
+  Verifying        : m4-1.4.19-2.amzn2023.0.2.x86_64                                                                                                  39/70
+  Verifying        : mailcap-2.1.49-3.amzn2023.0.3.noarch                                                                                             40/70
+  Verifying        : make-1:4.3-5.amzn2023.0.2.x86_64                                                                                                 41/70
+  Verifying        : mod_http2-2.0.27-1.amzn2023.0.3.x86_64                                                                                           42/70
+  Verifying        : mod_lua-2.4.62-1.amzn2023.x86_64                                                                                                 43/70
+  Verifying        : nginx-filesystem-1:1.26.2-1.amzn2023.0.1.noarch                                                                                  44/70
+  Verifying        : openssl-devel-1:3.0.8-1.amzn2023.0.18.x86_64                                                                                     45/70
+  Verifying        : pcre2-devel-10.40-1.amzn2023.0.3.x86_64                                                                                          46/70
+  Verifying        : pcre2-utf16-10.40-1.amzn2023.0.3.x86_64                                                                                          47/70
+  Verifying        : pcre2-utf32-10.40-1.amzn2023.0.3.x86_64                                                                                          48/70
+  Verifying        : perl-B-1.80-477.amzn2023.0.6.x86_64                                                                                              49/70
+  Verifying        : perl-Data-Dumper-2.174-460.amzn2023.0.2.x86_64                                                                                   50/70
+  Verifying        : perl-File-Compare-1.100.600-477.amzn2023.0.6.noarch                                                                              51/70
+  Verifying        : perl-File-Copy-2.34-477.amzn2023.0.6.noarch                                                                                      52/70
+  Verifying        : perl-File-Find-1.37-477.amzn2023.0.6.noarch                                                                                      53/70
+  Verifying        : perl-Thread-Queue-3.14-458.amzn2023.0.2.noarch                                                                                   54/70
+  Verifying        : perl-threads-1:2.25-458.amzn2023.0.3.x86_64                                                                                      55/70
+  Verifying        : perl-threads-shared-1.61-458.amzn2023.0.2.x86_64                                                                                 56/70
+  Verifying        : php8.3-8.3.10-1.amzn2023.0.1.x86_64                                                                                              57/70
+  Verifying        : php8.3-cli-8.3.10-1.amzn2023.0.1.x86_64                                                                                          58/70
+  Verifying        : php8.3-common-8.3.10-1.amzn2023.0.1.x86_64                                                                                       59/70
+  Verifying        : php8.3-devel-8.3.10-1.amzn2023.0.1.x86_64                                                                                        60/70
+  Verifying        : php8.3-fpm-8.3.10-1.amzn2023.0.1.x86_64                                                                                          61/70
+  Verifying        : php8.3-mbstring-8.3.10-1.amzn2023.0.1.x86_64                                                                                     62/70
+  Verifying        : php8.3-mysqlnd-8.3.10-1.amzn2023.0.1.x86_64                                                                                      63/70
+  Verifying        : php8.3-opcache-8.3.10-1.amzn2023.0.1.x86_64                                                                                      64/70
+  Verifying        : php8.3-pdo-8.3.10-1.amzn2023.0.1.x86_64                                                                                          65/70
+  Verifying        : php8.3-process-8.3.10-1.amzn2023.0.1.x86_64                                                                                      66/70
+  Verifying        : php8.3-sodium-8.3.10-1.amzn2023.0.1.x86_64                                                                                       67/70
+  Verifying        : php8.3-xml-8.3.10-1.amzn2023.0.1.x86_64                                                                                          68/70
+  Verifying        : xz-devel-5.2.5-9.amzn2023.0.2.x86_64                                                                                             69/70
+  Verifying        : zlib-devel-1.2.11-33.amzn2023.0.5.x86_64                                                                                         70/70
+
+Installed:
+  annobin-docs-10.93-1.amzn2023.0.1.noarch         annobin-plugin-gcc-10.93-1.amzn2023.0.1.x86_64      apr-1.7.5-1.amzn2023.0.2.x86_64
+  apr-util-1.6.3-1.amzn2023.0.1.x86_64             apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64        autoconf-2.69-36.amzn2023.0.3.noarch
+  automake-1.16.5-9.amzn2023.0.3.noarch            cmake-filesystem-3.22.2-1.amzn2023.0.4.x86_64       cpp-11.4.1-2.amzn2023.0.2.x86_64
+  emacs-filesystem-1:28.2-3.amzn2023.0.8.noarch    gc-8.0.4-5.amzn2023.0.2.x86_64                      gcc-11.4.1-2.amzn2023.0.2.x86_64
+  gcc-c++-11.4.1-2.amzn2023.0.2.x86_64             generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch   glibc-devel-2.34-117.amzn2023.0.1.x86_64
+  glibc-headers-x86-2.34-117.amzn2023.0.1.noarch   guile22-2.2.7-2.amzn2023.0.3.x86_64                 httpd-2.4.62-1.amzn2023.x86_64
+  httpd-core-2.4.62-1.amzn2023.x86_64              httpd-filesystem-2.4.62-1.amzn2023.noarch           httpd-tools-2.4.62-1.amzn2023.x86_64
+  kernel-headers-6.1.124-134.200.amzn2023.x86_64   keyutils-libs-devel-1.6.3-1.amzn2023.0.1.x86_64     krb5-devel-1.21.3-1.amzn2023.0.1.x86_64
+  libbrotli-1.0.9-4.amzn2023.0.2.x86_64            libcom_err-devel-1.46.5-2.amzn2023.0.2.x86_64       libkadm5-1.21.3-1.amzn2023.0.1.x86_64
+  libmpc-1.2.1-2.amzn2023.0.2.x86_64               libselinux-devel-3.4-5.amzn2023.0.2.x86_64          libsepol-devel-3.4-3.amzn2023.0.3.x86_64
+  libsodium-1.0.19-4.amzn2023.x86_64               libstdc++-devel-11.4.1-2.amzn2023.0.2.x86_64        libtool-2.4.7-1.amzn2023.0.3.x86_64
+  libtool-ltdl-2.4.7-1.amzn2023.0.3.x86_64         libverto-devel-0.3.2-1.amzn2023.0.2.x86_64          libxcrypt-devel-4.4.33-7.amzn2023.x86_64
+  libxml2-devel-2.10.4-1.amzn2023.0.7.x86_64       libxslt-1.1.34-5.amzn2023.0.2.x86_64                m4-1.4.19-2.amzn2023.0.2.x86_64
+  mailcap-2.1.49-3.amzn2023.0.3.noarch             make-1:4.3-5.amzn2023.0.2.x86_64                    mod_http2-2.0.27-1.amzn2023.0.3.x86_64
+  mod_lua-2.4.62-1.amzn2023.x86_64                 nginx-filesystem-1:1.26.2-1.amzn2023.0.1.noarch     openssl-devel-1:3.0.8-1.amzn2023.0.18.x86_64
+  pcre2-devel-10.40-1.amzn2023.0.3.x86_64          pcre2-utf16-10.40-1.amzn2023.0.3.x86_64             pcre2-utf32-10.40-1.amzn2023.0.3.x86_64
+  perl-B-1.80-477.amzn2023.0.6.x86_64              perl-Data-Dumper-2.174-460.amzn2023.0.2.x86_64      perl-File-Compare-1.100.600-477.amzn2023.0.6.noarch
+  perl-File-Copy-2.34-477.amzn2023.0.6.noarch      perl-File-Find-1.37-477.amzn2023.0.6.noarch         perl-Thread-Queue-3.14-458.amzn2023.0.2.noarch
+  perl-threads-1:2.25-458.amzn2023.0.3.x86_64      perl-threads-shared-1.61-458.amzn2023.0.2.x86_64    php8.3-8.3.10-1.amzn2023.0.1.x86_64
+  php8.3-cli-8.3.10-1.amzn2023.0.1.x86_64          php8.3-common-8.3.10-1.amzn2023.0.1.x86_64          php8.3-devel-8.3.10-1.amzn2023.0.1.x86_64
+  php8.3-fpm-8.3.10-1.amzn2023.0.1.x86_64          php8.3-mbstring-8.3.10-1.amzn2023.0.1.x86_64        php8.3-mysqlnd-8.3.10-1.amzn2023.0.1.x86_64
+  php8.3-opcache-8.3.10-1.amzn2023.0.1.x86_64      php8.3-pdo-8.3.10-1.amzn2023.0.1.x86_64             php8.3-process-8.3.10-1.amzn2023.0.1.x86_64
+  php8.3-sodium-8.3.10-1.amzn2023.0.1.x86_64       php8.3-xml-8.3.10-1.amzn2023.0.1.x86_64             xz-devel-5.2.5-9.amzn2023.0.2.x86_64
+  zlib-devel-1.2.11-33.amzn2023.0.5.x86_64
+
+Complete!
+[ec2-user@ip-172-31-10-32 ~]$ sudo dnf install -y mariadb105-server
+Last metadata expiration check: 0:20:37 ago on Wed Jan 29 04:06:54 2025.
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                             Architecture            Version                                     Repository                    Size
+============================================================================================================================================================
+Installing:
+ mariadb105-server                                   x86_64                  3:10.5.25-1.amzn2023.0.1                    amazonlinux                   11 M
+Installing dependencies:
+ mariadb-connector-c                                 x86_64                  3.1.13-1.amzn2023.0.3                       amazonlinux                  196 k
+ mariadb-connector-c-config                          noarch                  3.1.13-1.amzn2023.0.3                       amazonlinux                  9.2 k
+ mariadb105                                          x86_64                  3:10.5.25-1.amzn2023.0.1                    amazonlinux                  1.6 M
+ mariadb105-common                                   x86_64                  3:10.5.25-1.amzn2023.0.1                    amazonlinux                   29 k
+ mariadb105-errmsg                                   x86_64                  3:10.5.25-1.amzn2023.0.1                    amazonlinux                  213 k
+ mysql-selinux                                       noarch                  1.0.4-2.amzn2023.0.3                        amazonlinux                   36 k
+ perl-DBD-MariaDB                                    x86_64                  1.22-1.amzn2023.0.4                         amazonlinux                  153 k
+ perl-DBI                                            x86_64                  1.643-7.amzn2023.0.3                        amazonlinux                  700 k
+ perl-FileHandle                                     noarch                  2.03-477.amzn2023.0.6                       amazonlinux                   16 k
+ perl-Math-BigInt                                    noarch                  1:1.9998.39-2.amzn2023.0.2                  amazonlinux                  202 k
+ perl-Math-BigRat                                    noarch                  0.2614-458.amzn2023.0.2                     amazonlinux                   39 k
+ perl-Math-Complex                                   noarch                  1.59-477.amzn2023.0.6                       amazonlinux                   47 k
+ perl-Sys-Hostname                                   x86_64                  1.23-477.amzn2023.0.6                       amazonlinux                   18 k
+ perl-base                                           noarch                  2.27-477.amzn2023.0.6                       amazonlinux                   17 k
+Installing weak dependencies:
+ mariadb105-backup                                   x86_64                  3:10.5.25-1.amzn2023.0.1                    amazonlinux                  6.3 M
+ mariadb105-cracklib-password-check                  x86_64                  3:10.5.25-1.amzn2023.0.1                    amazonlinux                   15 k
+ mariadb105-gssapi-server                            x86_64                  3:10.5.25-1.amzn2023.0.1                    amazonlinux                   17 k
+ mariadb105-server-utils                             x86_64                  3:10.5.25-1.amzn2023.0.1                    amazonlinux                  216 k
+
+Transaction Summary
+============================================================================================================================================================
+Install  19 Packages
+
+Total download size: 20 M
+Installed size: 117 M
+Downloading Packages:
+(1/19): mariadb-connector-c-config-3.1.13-1.amzn2023.0.3.noarch.rpm                                                         249 kB/s | 9.2 kB     00:00
+(2/19): mariadb-connector-c-3.1.13-1.amzn2023.0.3.x86_64.rpm                                                                4.2 MB/s | 196 kB     00:00
+(3/19): mariadb105-10.5.25-1.amzn2023.0.1.x86_64.rpm                                                                         15 MB/s | 1.6 MB     00:00
+(4/19): mariadb105-common-10.5.25-1.amzn2023.0.1.x86_64.rpm                                                                 454 kB/s |  29 kB     00:00
+(5/19): mariadb105-cracklib-password-check-10.5.25-1.amzn2023.0.1.x86_64.rpm                                                607 kB/s |  15 kB     00:00
+(6/19): mariadb105-errmsg-10.5.25-1.amzn2023.0.1.x86_64.rpm                                                                 6.5 MB/s | 213 kB     00:00
+(7/19): mariadb105-gssapi-server-10.5.25-1.amzn2023.0.1.x86_64.rpm                                                          528 kB/s |  17 kB     00:00
+(8/19): mariadb105-server-utils-10.5.25-1.amzn2023.0.1.x86_64.rpm                                                           3.3 MB/s | 216 kB     00:00
+(9/19): mysql-selinux-1.0.4-2.amzn2023.0.3.noarch.rpm                                                                       969 kB/s |  36 kB     00:00
+(10/19): perl-DBD-MariaDB-1.22-1.amzn2023.0.4.x86_64.rpm                                                                    6.5 MB/s | 153 kB     00:00
+(11/19): perl-DBI-1.643-7.amzn2023.0.3.x86_64.rpm                                                                            17 MB/s | 700 kB     00:00
+(12/19): perl-FileHandle-2.03-477.amzn2023.0.6.noarch.rpm                                                                   671 kB/s |  16 kB     00:00
+(13/19): perl-Math-BigInt-1.9998.39-2.amzn2023.0.2.noarch.rpm                                                               6.9 MB/s | 202 kB     00:00
+(14/19): perl-Math-BigRat-0.2614-458.amzn2023.0.2.noarch.rpm                                                                1.8 MB/s |  39 kB     00:00
+(15/19): perl-Math-Complex-1.59-477.amzn2023.0.6.noarch.rpm                                                                 1.3 MB/s |  47 kB     00:00
+(16/19): perl-Sys-Hostname-1.23-477.amzn2023.0.6.x86_64.rpm                                                                 744 kB/s |  18 kB     00:00
+(17/19): perl-base-2.27-477.amzn2023.0.6.noarch.rpm                                                                         678 kB/s |  17 kB     00:00
+(18/19): mariadb105-backup-10.5.25-1.amzn2023.0.1.x86_64.rpm                                                                 12 MB/s | 6.3 MB     00:00
+(19/19): mariadb105-server-10.5.25-1.amzn2023.0.1.x86_64.rpm                                                                 24 MB/s |  11 MB     00:00
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                        33 MB/s |  20 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Installing       : mariadb-connector-c-config-3.1.13-1.amzn2023.0.3.noarch                                                                           1/19
+  Installing       : mariadb105-common-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                 2/19
+  Installing       : mariadb-connector-c-3.1.13-1.amzn2023.0.3.x86_64                                                                                  3/19
+  Installing       : perl-Sys-Hostname-1.23-477.amzn2023.0.6.x86_64                                                                                    4/19
+  Installing       : mariadb105-errmsg-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                 5/19
+  Installing       : perl-base-2.27-477.amzn2023.0.6.noarch                                                                                            6/19
+  Installing       : perl-Math-Complex-1.59-477.amzn2023.0.6.noarch                                                                                    7/19
+  Installing       : perl-Math-BigRat-0.2614-458.amzn2023.0.2.noarch                                                                                   8/19
+  Installing       : perl-Math-BigInt-1:1.9998.39-2.amzn2023.0.2.noarch                                                                                9/19
+  Installing       : perl-FileHandle-2.03-477.amzn2023.0.6.noarch                                                                                     10/19
+  Installing       : perl-DBI-1.643-7.amzn2023.0.3.x86_64                                                                                             11/19
+  Installing       : perl-DBD-MariaDB-1.22-1.amzn2023.0.4.x86_64                                                                                      12/19
+  Running scriptlet: mysql-selinux-1.0.4-2.amzn2023.0.3.noarch                                                                                        13/19
+  Installing       : mysql-selinux-1.0.4-2.amzn2023.0.3.noarch                                                                                        13/19
+  Running scriptlet: mysql-selinux-1.0.4-2.amzn2023.0.3.noarch                                                                                        13/19
+libsemanage.semanage_direct_install_info: Overriding mysql module at lower priority 100 with module at priority 200.
+
+  Installing       : mariadb105-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                       14/19
+  Installing       : mariadb105-backup-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                15/19
+  Installing       : mariadb105-cracklib-password-check-3:10.5.25-1.amzn2023.0.1.x86_64                                                               16/19
+  Installing       : mariadb105-gssapi-server-3:10.5.25-1.amzn2023.0.1.x86_64                                                                         17/19
+  Running scriptlet: mariadb105-server-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                18/19
+  Installing       : mariadb105-server-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                18/19
+  Running scriptlet: mariadb105-server-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                18/19
+  Installing       : mariadb105-server-utils-3:10.5.25-1.amzn2023.0.1.x86_64                                                                          19/19
+  Running scriptlet: mysql-selinux-1.0.4-2.amzn2023.0.3.noarch                                                                                        19/19
+  Running scriptlet: mariadb105-server-utils-3:10.5.25-1.amzn2023.0.1.x86_64                                                                          19/19
+  Verifying        : mariadb-connector-c-3.1.13-1.amzn2023.0.3.x86_64                                                                                  1/19
+  Verifying        : mariadb-connector-c-config-3.1.13-1.amzn2023.0.3.noarch                                                                           2/19
+  Verifying        : mariadb105-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                        3/19
+  Verifying        : mariadb105-backup-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                 4/19
+  Verifying        : mariadb105-common-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                 5/19
+  Verifying        : mariadb105-cracklib-password-check-3:10.5.25-1.amzn2023.0.1.x86_64                                                                6/19
+  Verifying        : mariadb105-errmsg-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                 7/19
+  Verifying        : mariadb105-gssapi-server-3:10.5.25-1.amzn2023.0.1.x86_64                                                                          8/19
+  Verifying        : mariadb105-server-3:10.5.25-1.amzn2023.0.1.x86_64                                                                                 9/19
+  Verifying        : mariadb105-server-utils-3:10.5.25-1.amzn2023.0.1.x86_64                                                                          10/19
+  Verifying        : mysql-selinux-1.0.4-2.amzn2023.0.3.noarch                                                                                        11/19
+  Verifying        : perl-DBD-MariaDB-1.22-1.amzn2023.0.4.x86_64                                                                                      12/19
+  Verifying        : perl-DBI-1.643-7.amzn2023.0.3.x86_64                                                                                             13/19
+  Verifying        : perl-FileHandle-2.03-477.amzn2023.0.6.noarch                                                                                     14/19
+  Verifying        : perl-Math-BigInt-1:1.9998.39-2.amzn2023.0.2.noarch                                                                               15/19
+  Verifying        : perl-Math-BigRat-0.2614-458.amzn2023.0.2.noarch                                                                                  16/19
+  Verifying        : perl-Math-Complex-1.59-477.amzn2023.0.6.noarch                                                                                   17/19
+  Verifying        : perl-Sys-Hostname-1.23-477.amzn2023.0.6.x86_64                                                                                   18/19
+  Verifying        : perl-base-2.27-477.amzn2023.0.6.noarch                                                                                           19/19
+
+Installed:
+  mariadb-connector-c-3.1.13-1.amzn2023.0.3.x86_64                     mariadb-connector-c-config-3.1.13-1.amzn2023.0.3.noarch
+  mariadb105-3:10.5.25-1.amzn2023.0.1.x86_64                           mariadb105-backup-3:10.5.25-1.amzn2023.0.1.x86_64
+  mariadb105-common-3:10.5.25-1.amzn2023.0.1.x86_64                    mariadb105-cracklib-password-check-3:10.5.25-1.amzn2023.0.1.x86_64
+  mariadb105-errmsg-3:10.5.25-1.amzn2023.0.1.x86_64                    mariadb105-gssapi-server-3:10.5.25-1.amzn2023.0.1.x86_64
+  mariadb105-server-3:10.5.25-1.amzn2023.0.1.x86_64                    mariadb105-server-utils-3:10.5.25-1.amzn2023.0.1.x86_64
+  mysql-selinux-1.0.4-2.amzn2023.0.3.noarch                            perl-DBD-MariaDB-1.22-1.amzn2023.0.4.x86_64
+  perl-DBI-1.643-7.amzn2023.0.3.x86_64                                 perl-FileHandle-2.03-477.amzn2023.0.6.noarch
+  perl-Math-BigInt-1:1.9998.39-2.amzn2023.0.2.noarch                   perl-Math-BigRat-0.2614-458.amzn2023.0.2.noarch
+  perl-Math-Complex-1.59-477.amzn2023.0.6.noarch                       perl-Sys-Hostname-1.23-477.amzn2023.0.6.x86_64
+  perl-base-2.27-477.amzn2023.0.6.noarch
+
+Complete!
+[ec2-user@ip-172-31-10-32 ~]$ dnf info mariadb105
+Amazon Linux 2023 repository                                                                                                 62 MB/s |  31 MB     00:00
+Amazon Linux 2023 Kernel Livepatch repository                                                                                70 kB/s |  11 kB     00:00
+Installed Packages
+Name         : mariadb105
+Epoch        : 3
+Version      : 10.5.25
+Release      : 1.amzn2023.0.1
+Architecture : x86_64
+Size         : 18 M
+Source       : mariadb105-10.5.25-1.amzn2023.0.1.src.rpm
+Repository   : @System
+From repo    : amazonlinux
+Summary      : A very fast and robust SQL database server
+URL          : http://mariadb.org
+License      : GPLv2 and LGPLv2
+Description  : MariaDB is a community developed fork from MySQL - a multi-user, multi-threaded
+             : SQL database server. It is a client/server implementation consisting of
+             : a server daemon (mariadbd) and many different client programs and libraries.
+             : The base package contains the standard MariaDB/MySQL client programs and
+             : utilities.
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo systemctl start httpd && sudo systemctl enable httpd
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
+[ec2-user@ip-172-31-10-32 ~]$ sudo systemctl is-enabled httpd
+enabled
+[ec2-user@ip-172-31-10-32 ~]$ sudo usermod -a -G apache ec2-user
+[ec2-user@ip-172-31-10-32 ~]$ exit
+logout
+Connection to ec2-13-127-171-69.ap-south-1.compute.amazonaws.com closed.
+PS C:\Users\Lenovo\downloads> ssh -i "vedantkey.pem" ec2-user@ec2-13-127-171-69.ap-south-1.compute.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Jan 29 04:25:53 2025 from 49.15.233.223
+[ec2-user@ip-172-31-10-32 ~]$ wget https://wordpress.org/latest.tar.gz
+--2025-01-29 04:33:44--  https://wordpress.org/latest.tar.gz
+Resolving wordpress.org (wordpress.org)... 198.143.164.252
+Connecting to wordpress.org (wordpress.org)|198.143.164.252|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 26931653 (26M) [application/octet-stream]
+Saving to: ‘latest.tar.gz’
+
+latest.tar.gz                          100%[============================================================================>]  25.68M  6.38MB/s    in 5.5s
+
+2025-01-29 04:33:50 (4.67 MB/s) - ‘latest.tar.gz’ saved [26931653/26931653]
+
+[ec2-user@ip-172-31-10-32 ~]$ tar -xzf latest.tar.gz
+[ec2-user@ip-172-31-10-32 ~]$ ls
+latest.tar.gz  wordpress
+[ec2-user@ip-172-31-10-32 ~]$ sudo usermod -a -G apache ec2-user
+[ec2-user@ip-172-31-10-32 ~]$ exit
+logout
+Connection to ec2-13-127-171-69.ap-south-1.compute.amazonaws.com closed.
+PS C:\Users\Lenovo\downloads> ssh -i "vedantkey.pem" ec2-user@ec2-13-127-171-69.ap-south-1.compute.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Jan 29 04:32:30 2025 from 49.15.233.223
+[ec2-user@ip-172-31-10-32 ~]$ sudo chown -R ec2-user:apache /var/www
+[ec2-user@ip-172-31-10-32 ~]$ sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
+[ec2-user@ip-172-31-10-32 ~]$ find /var/www -type f -exec sudo chmod 0664 {} \;
+[ec2-user@ip-172-31-10-32 ~]$ cd /var/www/html/
+[ec2-user@ip-172-31-10-32 html]$ ls
+[ec2-user@ip-172-31-10-32 html]$ cp wordpress/wp-config-sample.php wordpress/wp-config.php
+cp: cannot stat 'wordpress/wp-config-sample.php': No such file or directory
+[ec2-user@ip-172-31-10-32 html]$ exist
+-bash: exist: command not found
+[ec2-user@ip-172-31-10-32 html]$ exit
+logout
+Connection to ec2-13-127-171-69.ap-south-1.compute.amazonaws.com closed.
+PS C:\Users\Lenovo\downloads> ssh -i "vedantkey.pem" ec2-user@ec2-13-127-171-69.ap-south-1.compute.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Jan 29 04:36:16 2025 from 49.15.233.223
+[ec2-user@ip-172-31-10-32 ~]$ ls
+latest.tar.gz  wordpress
+[ec2-user@ip-172-31-10-32 ~]$
+[ec2-user@ip-172-31-10-32 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-10-32 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-10-32 ~]$ sudo cp -r wordpress/* /var/www/html/
+[ec2-user@ip-172-31-10-32 ~]$ sudo usermod -a -G apache ec2-user
+[ec2-user@ip-172-31-10-32 ~]$ exist
+-bash: exist: command not found
+[ec2-user@ip-172-31-10-32 ~]$ exit
+logout
+Connection to ec2-13-127-171-69.ap-south-1.compute.amazonaws.com closed.
+PS C:\Users\Lenovo\downloads> ssh -i "vedantkey.pem" ec2-user@ec2-13-127-171-69.ap-south-1.compute.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Jan 29 04:41:06 2025 from 49.15.233.223
+[ec2-user@ip-172-31-10-32 ~]$ sudo chown -R ec2-user:apache /var/www
+[ec2-user@ip-172-31-10-32 ~]$ sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
+[ec2-user@ip-172-31-10-32 ~]$ find /var/www -type f -exec sudo chmod 0664 {} \;
+[ec2-user@ip-172-31-10-32 ~]$ cd /var/www/html/
+[ec2-user@ip-172-31-10-32 html]$ ls
+index.php    wp-activate.php     wp-comments-post.php  wp-cron.php        wp-load.php   wp-settings.php   xmlrpc.php
+license.txt  wp-admin            wp-config-sample.php  wp-includes        wp-login.php  wp-signup.php
+readme.html  wp-blog-header.php  wp-content            wp-links-opml.php  wp-mail.php   wp-trackback.php
+[ec2-user@ip-172-31-10-32 html]$ ls
+index.php    wp-activate.php     wp-comments-post.php  wp-cron.php        wp-load.php   wp-settings.php   xmlrpc.php
+license.txt  wp-admin            wp-config-sample.php  wp-includes        wp-login.php  wp-signup.php
+readme.html  wp-blog-header.php  wp-content            wp-links-opml.php  wp-mail.php   wp-trackback.php
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$
+[ec2-user@ip-172-31-10-32 html]$ ls
+index.php    wp-activate.php     wp-comments-post.php  wp-cron.php        wp-load.php   wp-settings.php   xmlrpc.php
+license.txt  wp-admin            wp-config-sample.php  wp-includes        wp-login.php  wp-signup.php
+readme.html  wp-blog-header.php  wp-content            wp-links-opml.php  wp-mail.php   wp-trackback.php
+[ec2-user@ip-172-31-10-32 html]$ cp-config-sample.php wo-config.php
+-bash: cp-config-sample.php: command not found
+[ec2-user@ip-172-31-10-32 html]$ cp wordpress/wp-config-sample.php wordpress/wp-config.php
+cp: cannot stat 'wordpress/wp-config-sample.php': No such file or directory
+[ec2-user@ip-172-31-10-32 html]$ wp-config-sample.phpclient_loop: send disconnect: Connection reset
+PS C:\Users\Lenovo\downloads> cd downloads
+PS C:\Users\Lenovo> cd downloads
+PS C:\Users\Lenovo\downloads> ssh -i "vedantkey.pem" ec2-user@ec2-13-127-171-69.ap-south-1.compute.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Jan 29 04:46:20 2025 from 49.15.233.223
+[ec2-user@ip-172-31-10-32 ~]$ ls
+latest.tar.gz  wordpress
+[ec2-user@ip-172-31-10-32 ~]$ cd /var/www/html/
+[ec2-user@ip-172-31-10-32 html]$ ls
+index.php    wp-activate.php     wp-comments-post.php  wp-cron.php        wp-load.php   wp-settings.php   xmlrpc.php
+license.txt  wp-admin            wp-config-sample.php  wp-includes        wp-login.php  wp-signup.php
+readme.html  wp-blog-header.php  wp-content            wp-links-opml.php  wp-mail.php   wp-trackback.php
+[ec2-user@ip-172-31-10-32 html]$ cp wp-config-sample.php wp-config.php
+[ec2-user@ip-172-31-10-32 html]$ ls
+index.php    wp-activate.php     wp-comments-post.php  wp-content   wp-links-opml.php  wp-mail.php      wp-trackback.php
+license.txt  wp-admin            wp-config-sample.php  wp-cron.php  wp-load.php        wp-settings.php  xmlrpc.php
+readme.html  wp-blog-header.php  wp-config.php         wp-includes  wp-login.php       wp-signup.php
+[ec2-user@ip-172-31-10-32 html]$ nano wp-config.php
+[ec2-user@ip-172-31-10-32 html]$ cat wp-config.php
+<?php
+/**
+ * The base configuration for WordPress
+ *
+ * The wp-config.php creation script uses this file during the installation.
+ * You don't have to use the website, you can copy this file to "wp-config.php"
+ * and fill in the values.
+ *
+ * This file contains the following configurations:
+ *
+ * * Database settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/
+ *
+ * @package WordPress
+ */
+
+// ** Database settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'wprdsdatabase' );
+
+/** Database username */
+define( 'DB_USER', 'admin' );
+
+/** Database password */
+define( 'DB_PASSWORD', 'vedantkuber' );
+
+/** Database hostname */
+define( 'DB_HOST', 'wprdsdatabase.clom8miew66s.ap-south-1.rds.amazonaws.com' );
+
+/** Database charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8' );
+
+/** The database collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
+
+/**#@+
+ * Authentication unique keys and salts.
+ *
+ * Change these to different unique phrases! You can generate these using
+ * the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}.
+ *
+ * You can change these at any point in time to invalidate all existing cookies.
+ * This will force all users to have to log in again.
+ *
+ * @since 2.6.0
+ */
+define( 'AUTH_KEY',         'put your unique phrase here' );
+define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
+define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
+define( 'NONCE_KEY',        'put your unique phrase here' );
+define( 'AUTH_SALT',        'put your unique phrase here' );
+define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
+define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
+define( 'NONCE_SALT',       'put your unique phrase here' );
+
+/**#@-*/
+
+/**
+ * WordPress database table prefix.
+ *
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
+ *
+ * At the installation time, database tables are created with the specified prefix.
+ * Changing this value after WordPress is installed will make your site think
+ * it has not been installed.
+ *
+ * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
+ */
+$table_prefix = 'wp_';
+
+/**
+ * For developers: WordPress debugging mode.
+ *
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the documentation.
+ *
+ * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
+ */
+define( 'WP_DEBUG', false );
+
+/* Add any custom values between this line and the "stop editing" line. */
+
+
+
+/* That's all, stop editing! Happy publishing. */
+
+/** Absolute path to the WordPress directory. */
+if ( ! defined( 'ABSPATH' ) ) {
+        define( 'ABSPATH', __DIR__ . '/' );
+}
+
+/** Sets up WordPress vars and included files. */
+require_once ABSPATH . 'wp-settings.php';
+
+[ec2-user@ip-172-31-10-32 html]$ ls
+index.php    wp-activate.php     wp-comments-post.php  wp-content   wp-links-opml.php  wp-mail.php      wp-trackback.php
+license.txt  wp-admin            wp-config-sample.php  wp-cron.php  wp-load.php        wp-settings.php  xmlrpc.php
+readme.html  wp-blog-header.php  wp-config.php         wp-includes  wp-login.php       wp-signup.php
+[ec2-user@ip-172-31-10-32 html]$ sudo nano /etc/httpd/conf/httpd.conf
+[ec2-user@ip-172-31-10-32 html]$ sudo systemctl restart httpd
+[ec2-user@ip-172-31-10-32 html]$ client_loop: send disconnect: Connection reset
+PS C:\Users\Lenovo\downloads>

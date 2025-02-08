@@ -1,0 +1,49 @@
+[ec2-user@ip-172-31-10-32 ~]$ sudo dnf update -y
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo dnf install -y httpd wget php-fpm php-mysqli php-json php php-devel
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo dnf install -y mariadb105-server
+
+[ec2-user@ip-172-31-10-32 ~]$ dnf info mariadb105
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo systemctl start httpd && sudo systemctl enable httpd
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo systemctl is-enabled httpd
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo usermod -a -G apache ec2-user
+
+[ec2-user@ip-172-31-10-32 ~]$ exit
+
+[ec2-user@ip-172-31-10-32 ~]$ wget https://wordpress.org/latest.tar.gz
+
+[ec2-user@ip-172-31-10-32 ~]$ tar -xzf latest.tar.gz
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo usermod -a -G apache ec2-user
+
+[ec2-user@ip-172-31-10-32 ~]$ exit
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo chown -R ec2-user:apache /var/www
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
+
+[ec2-user@ip-172-31-10-32 ~]$ find /var/www -type f -exec sudo chmod 0664 {} \;
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo cp -r wordpress/* /var/www/html/
+
+[ec2-user@ip-172-31-10-32 ~]$ sudo usermod -a -G apache ec2-user
+
+[ec2-user@ip-172-31-10-32 ~]$ exit
+
+[ec2-user@ip-172-31-10-32 ~]$ cd /var/www/html/
+
+[ec2-user@ip-172-31-10-32 html]$ ls
+
+[ec2-user@ip-172-31-10-32 html]$ cp wp-config-sample.php wp-config.php
+
+[ec2-user@ip-172-31-10-32 html]$ cat wp-config.php
+
+[ec2-user@ip-172-31-10-32 html]$ sudo nano /etc/httpd/conf/httpd.conf
+
+[ec2-user@ip-172-31-10-32 html]$ sudo systemctl restart httpd
+
+PS C:\Users\Lenovo\downloads>
